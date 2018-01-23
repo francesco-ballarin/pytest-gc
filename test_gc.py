@@ -8,4 +8,4 @@ def test_switch(testdir):
     def test_switch():
         assert not gc.isenabled()
     """)
-    testdir.runpytest().assert_outcomes(passed=1)
+    testdir.runpytest('--gc-disable').assert_outcomes(passed=1)
