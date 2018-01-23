@@ -3,7 +3,15 @@ import gc
 import pytest
 
 
+def pytest_addoption(parser):
+    parser.addoption('--gc-disable', action='store_true',
+                     help='Disable automatic garbage collection')
+
+
 @pytest.fixture(autouse=True)
-def switch():
-    yield gc.disable()
-    gc.enable()
+def switch(request):
+    if request.config.getoption('--gc-disable'):
+        yield gc.disable()
+        gc.enable()
+    else:
+        yield
