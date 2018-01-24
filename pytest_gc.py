@@ -11,7 +11,5 @@ def pytest_addoption(parser):
 @pytest.fixture(autouse=True)
 def switch(request):
     if request.config.getoption('--gc-disable'):
-        yield gc.disable()
-        gc.enable()
-    else:
-        yield
+        request.addfinalizer(gc.enable)
+        gc.disable()
