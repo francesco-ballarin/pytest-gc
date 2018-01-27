@@ -4,11 +4,12 @@ import os
 class PluginLoader:
     @staticmethod
     def pytest_addoption(parser):
-        parser.addoption('--gc-disable', action='store_true',
-                         help='Disable automatic garbage collection')
-        parser.addoption('--gc-threshold', nargs='+', type=int,
-                         help='Set the garbage collection thresholds')
-        parser.addoption('--gc-scope', help='Set the scope for gc fixtures')
+        group = parser.getgroup('gc', 'GC control when running tests')
+        group.addoption('--gc-disable', action='store_true',
+                        help='Disable automatic garbage collection')
+        group.addoption('--gc-threshold', nargs='+', type=int,
+                        help='Set the garbage collection thresholds')
+        group.addoption('--gc-scope', help='Set the scope for gc fixtures')
 
     @staticmethod
     def pytest_configure(config):
