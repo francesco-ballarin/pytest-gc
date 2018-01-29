@@ -2,6 +2,9 @@
 pytest-gc
 =========
 
+.. image:: https://travis-ci.org/vtitor/pytest-gc.svg?branch=master
+    :target: https://travis-ci.org/vtitor/pytest-gc
+
 The garbage collector plugin for py.test.
 
 Installation
