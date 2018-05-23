@@ -5,6 +5,9 @@ pytest-gc
 .. image:: https://travis-ci.org/vtitor/pytest-gc.svg?branch=master
     :target: https://travis-ci.org/vtitor/pytest-gc
 
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/ambv/black
+
 The garbage collector plugin for py.test.
 
 Installation
