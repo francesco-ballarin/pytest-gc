@@ -12,6 +12,7 @@ setup(
     entry_points={"pytest11": ["gc = pytest_gc:PluginLoader"]},
     install_requires=["pytest", "six"],
     tests_require=["pytest"],
+    extras_require={"dev": ["pre-commit", "black"]},
     classifiers=[
         "Framework :: Pytest",
         "Programming Language :: Python",
